@@ -36,7 +36,8 @@ if (cart_list != null) {
 	<%@include file="includes/navbar.jsp"%>
 
 	<div class="container">
-		<div class="card-header my-3">All Orders</div>
+		<div class="card-header my-3"
+			style="background-color: #30344b; color: white;">All Orders</div>
 		<table class="table table-light">
 			<thead>
 				<tr>

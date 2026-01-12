@@ -35,9 +35,11 @@ if (cart_list != null) {
 	vertical-align: middle;
 }
 
+/* Updated Code */
 .btn-incre, .btn-decre {
 	box-shadow: none;
 	font-size: 25px;
+	color: #ffbc5e !important; /* This applies the yellow color */
 }
 
 .btn-yellow {
