@@ -10,8 +10,19 @@ public class DbConn {
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		if(conn == null) {
-		      Class.forName("com.mysql.cj.jdbc.Driver");
-			  conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ecommerce", "root", "Abdul@12345");
+		    String url = "jdbc:mysql://localhost:3306/Ecommerce";
+            String username = System.getenv("DB_USERNAME");
+            String password = System.getenv("DB_PASSWORD");
+
+            if (username == null || password == null) {
+                throw new IllegalStateException(
+                    "Database environment variables are not configured."
+                );
+            }
+
+            conn = DriverManager.getConnection(
+                url, username, password
+            );
 		}
 		return conn;
 	}
